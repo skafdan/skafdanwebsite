@@ -6,7 +6,7 @@ aliases = ["about","contact"]
   name = "Dan Skaf"
 +++
 
-I am **Linux**, **Networking**, **Cyber Security** and **Programming** 
+I am a **Linux**, **Networking**, **Cyber Security** and **Programming** 
 enthusiast, recently 
 graduated from the Otago University in Computer Science and Electronics.
 
