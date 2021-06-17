@@ -1,6 +1,6 @@
 +++
 title = "About"
-date = "2014-04-09"
+date = "2021-06-17"
 aliases = ["about","contact"]
 [ author ]
   name = "Dan Skaf"
