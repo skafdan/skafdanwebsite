@@ -1,4 +1,4 @@
-baseURL = "http://danskaf.tk"
+baseURL = "http://danskaf.dev"
 title   = "Dan Skaf"
 languageCode = "en-us"
 theme = "hello-friend-ng"
