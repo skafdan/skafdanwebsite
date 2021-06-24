@@ -78,7 +78,7 @@ PygmentsStyle = "monokai"
     author = true
 
     topText = []
-    bottomText = ["Powered by <a href=\"http://gohugo.io\">Hugo</a>"]
+    bottomText = ["Powered by <a href=\"http://gohugo.io\">Hugo</a> and my <a href=\"https://danskaf.dev/posts/2021/06/hosted-on-my-pi/\">Raspberry Pi</a>"]
 
   # Colors for favicons
   #
