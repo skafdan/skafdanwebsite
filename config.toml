@@ -119,7 +119,7 @@ PygmentsStyle = "monokai"
   # Social icons
   [[params.social]]
     name = "email"
-    url  = "mailto:skafdan@gmail.com"
+    url  = "mailto:dan@danskaf.dev"
 
   [[params.social]]
     name = "github"

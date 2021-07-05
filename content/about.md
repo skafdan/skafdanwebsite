@@ -11,6 +11,6 @@ enthusiast, recently
 graduated from the Otago University in Computer Science and Electronics.
 
 Contact me and find links to my projects here.
-* skafdan@gmail.com
+* dan@danskaf.dev
 * https://github.com/skafdan
 
