@@ -66,7 +66,7 @@ In my case the line in the unit file:
 ```
 ExecStart=/usr/bin/python3 /home/discordBot/main.py
 ```
-the same as running the following command while `cd` into the working directory 
+is the same as running the following command while `cd` into the working directory 
 of my bot:
 ```
 $ python3 main.py
