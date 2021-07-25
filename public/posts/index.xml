@@ -15,11 +15,20 @@
             <pubDate>Sun, 25 Jul 2021 17:05:47 +1200</pubDate>
             
             <guid>http://danskaf.dev/posts/2021/07/home-vpn/</guid>
-            <description>As the amount of services I have running on my home-network increases it&amp;rsquo;s become more and more sensible to have a secure way of accessing them while out of the house.</description>
+            <description>As the amount of services I have running on my home-network increases it&amp;rsquo;s become more and more sensible to have a secure way of accessing them while out of the house.
+Work in progress
+ References and links  Padlock vector image used under creative commons license 4.0 Nyr Wireguard install script  </description>
             <content type="html"><![CDATA[<p><img src="padlock.png" alt="padlock"></p>
 <p>As the amount of services I have running on my home-network increases it&rsquo;s become
 more and more sensible to have a secure way of accessing them while out of the
 house.</p>
+<p><em>Work in progress</em></p>
+<hr>
+<h3 id="references-and-links">References and links</h3>
+<ul>
+<li><a href="https://commons.wikimedia.org/wiki/File:Antu_object-unlocked.svg">Padlock vector image used under creative commons license 4.0</a></li>
+<li><a href="https://github.com/Nyr/wireguard-install">Nyr Wireguard install script</a></li>
+</ul>
 ]]></content>
         </item>
         

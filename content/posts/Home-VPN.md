@@ -15,3 +15,10 @@ tags:
 As the amount of services I have running on my home-network increases it's become
 more and more sensible to have a secure way of accessing them while out of the 
 house.
+
+*Work in progress*
+
+---
+### References and links
+- [Padlock vector image used under creative commons license 4.0](https://commons.wikimedia.org/wiki/File:Antu_object-unlocked.svg)
+- [Nyr Wireguard install script](https://github.com/Nyr/wireguard-install)
