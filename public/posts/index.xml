@@ -16,14 +16,14 @@
             
             <guid>http://danskaf.dev/posts/2021/07/user-systemd-service/</guid>
             <description>Creating your own systemd services.
-I recently created a discord bot and was sick of putting it online each time my friends tried to use it. As most linux distributions come with systemd I decided to learn how to use it and solve my problem of forgetting to put the bot online each time.
-Though this blog post refers to a python script you can use it with any script or program of your choice.</description>
-            <content type="html"><![CDATA[<p><img src="/static/page-logo.png" alt="systemdlogo"></p>
+I recently created a discord bot, and constantly starting it manually was frustrating. As most linux distributions come with Systemd, I decided to use this opportunity to learn to create custom services and solve my problem.
+Though this blog post refers to a python script you can use it with any script or program of your choice.
+Dependencies  A &amp;ldquo;bloated&amp;rdquo; linux distro that uses systemd A script or program to manage   Systemd service files are located in the /etc/systemd/system/ directory.</description>
+            <content type="html"><![CDATA[<p><img src="page-logo.png" alt="systemdlogo"></p>
 <p>Creating your own systemd services.</p>
-<p>I recently created a discord bot and was sick of putting it online each time my
-friends tried to use it. As most linux distributions come with <code>systemd</code> I decided
-to learn how to use it and solve my problem of forgetting to put the bot online
-each time.</p>
+<p>I recently created a discord bot, and constantly starting it manually was
+frustrating. As most linux distributions come with Systemd, I decided to use
+this opportunity to learn to create custom services and solve my problem.</p>
 <p>Though this blog post refers to a python script you can use it with any script
 or program of your choice.</p>
 <h3 id="dependencies">Dependencies</h3>
@@ -58,18 +58,20 @@ WantedBy=multi-user.target
 </code></pre><p>In the <code>[Unit]</code> section we can handle dependencies, as my bot needs to be
 connected to the internet we specify the <code>After</code> option for the service to only
 start after the network interfaces are up.</p>
-<p>In the <code>[Service]</code> section we can set the type of the service, the Arch-wiki
-provides an in depth description of the different service types and their uses
-which can be found <a href="https://wiki.archlinux.org/title/Systemd#Service_types">here</a>.
-For most cases <code>Type=simple</code> will be all you need. <code>User</code> needs to be the user
-who is running the service.</p>
+<p>In the <code>[Service]</code> section we can set the type of the service, the Arch-Wiki<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+provides an in depth description of the different service types.
+For most cases <code>Type=simple</code> will be all you need. <code>User</code> will  be the normal
+user who is running the service.</p>
 <p>For <code>ExecStart</code> we specify the command that is being run.
-In my case the line in the unit file is the same as running:</p>
+In my case the line in the unit file:</p>
+<pre><code>ExecStart=/usr/bin/python3 /home/discordBot/main.py
+</code></pre><p>is the same as running the following command while <code>cd</code> into the working directory
+of my bot:</p>
 <pre><code>$ python3 main.py
-</code></pre><p>if I was <code>cd</code> in to the directory with my bot. Specify a working directory that
-may contain any other files needed for the runtime of your service with the
-<code>WorkingDirectory</code> option, for instance in my case this directory contained  the
-token files for the discord api.</p>
+</code></pre><p>You may need to specify a working directory that contains any other files needed
+for the runtime of your service. This is accomplished with the
+<code>WorkingDirectory</code> option, in my case this directory contained the token files
+for the discord api.</p>
 <h3 id="logging">logging</h3>
 <p>We added 3 special options to enable logging of our service</p>
 <ul>
@@ -103,6 +105,14 @@ program identifier.</p>
 <p><a href="https://stackoverflow.com/questions/37585758/how-to-redirect-output-of-systemd-service-to-a-file">Stack Overflow</a></p>
 </li>
 </ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://wiki.archlinux.org/title/Systemd#Service_types">Service Types - Arch wiki</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 ]]></content>
         </item>
         
@@ -115,7 +125,7 @@ program identifier.</p>
             <description>This site is hosted using Apache web server on Raspberry Pi OS.
 As a brief guide:
  Ensure all repos and packages are up to date. Install the Apache server and enable the ssl and rewrite modules for https support. Enable the service to start at boot. Copy the html files to the webserver directory.  </description>
-            <content type="html"><![CDATA[<p><img src="/serverPi.jpg" alt="ServerPi"></p>
+            <content type="html"><![CDATA[<p><img src="serverPi.jpg" alt="ServerPi"></p>
 <p>This site is hosted using <code>Apache web server</code> on <code>Raspberry Pi OS</code>.</p>
 <p>As a brief guide:</p>
 <ol>

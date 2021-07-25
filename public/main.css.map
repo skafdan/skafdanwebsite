@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/home/dan/Documents/Hugo/danskaf.dev",
+	"sourceRoot": "/home/dan/Documents/Hugo/skafdanwebsite",
 	"sources": [
 		"themes/hello-friend-ng/assets/scss/main.scss",
 		"themes/hello-friend-ng/assets/scss/_normalize.scss",

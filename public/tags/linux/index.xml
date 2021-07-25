@@ -15,8 +15,9 @@
       
       <guid>http://danskaf.dev/posts/2021/07/user-systemd-service/</guid>
       <description>Creating your own systemd services.
-I recently created a discord bot and was sick of putting it online each time my friends tried to use it. As most linux distributions come with systemd I decided to learn how to use it and solve my problem of forgetting to put the bot online each time.
-Though this blog post refers to a python script you can use it with any script or program of your choice.</description>
+I recently created a discord bot, and constantly starting it manually was frustrating. As most linux distributions come with Systemd, I decided to use this opportunity to learn to create custom services and solve my problem.
+Though this blog post refers to a python script you can use it with any script or program of your choice.
+Dependencies  A &amp;ldquo;bloated&amp;rdquo; linux distro that uses systemd A script or program to manage   Systemd service files are located in the /etc/systemd/system/ directory.</description>
     </item>
     
   </channel>
