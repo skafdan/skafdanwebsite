@@ -8,7 +8,7 @@ tags:
   - Raspberry Pi
 ---
 
-![ServerPi](/serverPi.jpg)
+![ServerPi](serverPi.jpg)
 
 This site is hosted using ```Apache web server``` on ```Raspberry Pi OS```.
 

@@ -8,7 +8,7 @@ tags:
   - systemd
   - Linux
 ---
-![systemdlogo](/static/page-logo.png)
+![systemdlogo](page-logo.png)
 
 Creating your own systemd services. 
 
