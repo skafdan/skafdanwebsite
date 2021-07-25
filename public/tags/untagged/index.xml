@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>untagged on Dan Skaf</title>
+    <link>http://danskaf.dev/tags/untagged/</link>
+    <description>Recent content in untagged on Dan Skaf</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 17 Jun 2021 17:01:06 +1200</lastBuildDate><atom:link href="http://danskaf.dev/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>http://danskaf.dev/posts/2021/06/my-first-post/</link>
+      <pubDate>Thu, 17 Jun 2021 17:01:06 +1200</pubDate>
+      
+      <guid>http://danskaf.dev/posts/2021/06/my-first-post/</guid>
+      <description>This is the first post on my new website</description>
+    </item>
+    
+  </channel>
+</rss>

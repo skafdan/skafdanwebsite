@@ -1,0 +1,132 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Dan Skaf</title>
+        <link>http://danskaf.dev/posts/</link>
+        <description>Recent content in Posts on Dan Skaf</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Sat, 17 Jul 2021 14:23:04 +1200</lastBuildDate>
+        <atom:link href="http://danskaf.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>User Systemd Service</title>
+            <link>http://danskaf.dev/posts/2021/07/user-systemd-service/</link>
+            <pubDate>Sat, 17 Jul 2021 14:23:04 +1200</pubDate>
+            
+            <guid>http://danskaf.dev/posts/2021/07/user-systemd-service/</guid>
+            <description>Creating your own systemd services.
+I recently created a discord bot and was sick of putting it online each time my friends tried to use it. As most linux distributions come with systemd I decided to learn how to use it and solve my problem of forgetting to put the bot online each time.
+Though this blog post refers to a python script you can use it with any script or program of your choice.</description>
+            <content type="html"><![CDATA[<p><img src="/static/page-logo.png" alt="systemdlogo"></p>
+<p>Creating your own systemd services.</p>
+<p>I recently created a discord bot and was sick of putting it online each time my
+friends tried to use it. As most linux distributions come with <code>systemd</code> I decided
+to learn how to use it and solve my problem of forgetting to put the bot online
+each time.</p>
+<p>Though this blog post refers to a python script you can use it with any script
+or program of your choice.</p>
+<h3 id="dependencies">Dependencies</h3>
+<ul>
+<li>A &ldquo;bloated&rdquo; linux distro that uses systemd</li>
+<li>A script or program to manage</li>
+</ul>
+<hr>
+<p>Systemd service files are located in the <code>/etc/systemd/system/</code> directory.</p>
+<p>Create a unit file with your chosen name of your service followed by <code>.service</code>
+, mine for instance was:</p>
+<pre><code>/etc/systemd/system/ $ sudo touch discord-bot.service
+</code></pre><p>This is my file I will explain the relevant parts below</p>
+<pre><code>[Unit]
+Description=&lt;short_description_of_program&gt;
+After=network.target
+StartLimitIntervalsec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=&lt;your_username&gt;
+WorkingDirectory=&lt;path_to_program_files&gt;
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=&lt;program_ID&gt;
+ExecStart=/usr/bin/python3 /home/&lt;user&gt;/discordBot/main.py
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>In the <code>[Unit]</code> section we can handle dependencies, as my bot needs to be
+connected to the internet we specify the <code>After</code> option for the service to only
+start after the network interfaces are up.</p>
+<p>In the <code>[Service]</code> section we can set the type of the service, the Arch-wiki
+provides an in depth description of the different service types and their uses
+which can be found <a href="https://wiki.archlinux.org/title/Systemd#Service_types">here</a>.
+For most cases <code>Type=simple</code> will be all you need. <code>User</code> needs to be the user
+who is running the service.</p>
+<p>For <code>ExecStart</code> we specify the command that is being run.
+In my case the line in the unit file is the same as running:</p>
+<pre><code>$ python3 main.py
+</code></pre><p>if I was <code>cd</code> in to the directory with my bot. Specify a working directory that
+may contain any other files needed for the runtime of your service with the
+<code>WorkingDirectory</code> option, for instance in my case this directory contained  the
+token files for the discord api.</p>
+<h3 id="logging">logging</h3>
+<p>We added 3 special options to enable logging of our service</p>
+<ul>
+<li><code>StandardOutput=syslog</code></li>
+<li><code>StandardError=syslog</code></li>
+<li><code>SyslogIdentifier=&lt;program_ID&gt;</code></li>
+</ul>
+<p>This redirects all stdout and stderr to the syslog, we need to create a unique
+program identifier.</p>
+<p>Next create a file in <code>/etc/rsyslog.d/&lt;service_name&gt;.conf</code></p>
+<pre><code>if $programname = '&lt;program_ID&gt;' then /path/to/log/file.log
+&amp; stop
+</code></pre><p>and then set the logfile ownership to the syslog user with:</p>
+<pre><code># chown syslog:adm /path/to/file.log
+</code></pre><hr>
+<p>All thats left is to restart the restart the rsyslog service.</p>
+<pre><code># systemctl restart rsyslog
+</code></pre><p>Enable our newly created service so it starts on boot.</p>
+<pre><code># systemctl enable discordBot.service
+</code></pre><p>Start the service.</p>
+<pre><code># systemctl start discordBot.service
+</code></pre><h3 id="references">References</h3>
+<ul>
+<li>
+<p><a href="https://github.com/systemd/brand.systemd.io/blob/master/assets/page-logo.png">systemd logo used under creative commons license 4.0</a></p>
+</li>
+<li>
+<p><a href="https://wiki.archlinux.org/title/systemd">Archwiki</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/37585758/how-to-redirect-output-of-systemd-service-to-a-file">Stack Overflow</a></p>
+</li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Hosted on My Pi</title>
+            <link>http://danskaf.dev/posts/2021/06/hosted-on-my-pi/</link>
+            <pubDate>Thu, 24 Jun 2021 16:10:26 +1200</pubDate>
+            
+            <guid>http://danskaf.dev/posts/2021/06/hosted-on-my-pi/</guid>
+            <description>This site is hosted using Apache web server on Raspberry Pi OS.
+As a brief guide:
+ Ensure all repos and packages are up to date. Install the Apache server and enable the ssl and rewrite modules for https support. Enable the service to start at boot. Copy the html files to the webserver directory.  </description>
+            <content type="html"><![CDATA[<p><img src="/serverPi.jpg" alt="ServerPi"></p>
+<p>This site is hosted using <code>Apache web server</code> on <code>Raspberry Pi OS</code>.</p>
+<p>As a brief guide:</p>
+<ol>
+<li>Ensure all repos and packages are up to date.</li>
+<li>Install the <code>Apache</code> server and enable the <code>ssl</code> and <code>rewrite</code> modules for
+https support.</li>
+<li>Enable the service to start at boot.</li>
+<li>Copy the html files to the webserver directory.</li>
+</ol>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>

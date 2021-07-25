@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dan Skaf</title>
+    <link>http://danskaf.dev/</link>
+    <description>Recent content on Dan Skaf</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 17 Jul 2021 14:23:04 +1200</lastBuildDate><atom:link href="http://danskaf.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>User Systemd Service</title>
+      <link>http://danskaf.dev/posts/2021/07/user-systemd-service/</link>
+      <pubDate>Sat, 17 Jul 2021 14:23:04 +1200</pubDate>
+      
+      <guid>http://danskaf.dev/posts/2021/07/user-systemd-service/</guid>
+      <description>Creating your own systemd services.
+I recently created a discord bot and was sick of putting it online each time my friends tried to use it. As most linux distributions come with systemd I decided to learn how to use it and solve my problem of forgetting to put the bot online each time.
+Though this blog post refers to a python script you can use it with any script or program of your choice.</description>
+    </item>
+    
+    <item>
+      <title>Hosted on My Pi</title>
+      <link>http://danskaf.dev/posts/2021/06/hosted-on-my-pi/</link>
+      <pubDate>Thu, 24 Jun 2021 16:10:26 +1200</pubDate>
+      
+      <guid>http://danskaf.dev/posts/2021/06/hosted-on-my-pi/</guid>
+      <description>This site is hosted using Apache web server on Raspberry Pi OS.
+As a brief guide:
+ Ensure all repos and packages are up to date. Install the Apache server and enable the ssl and rewrite modules for https support. Enable the service to start at boot. Copy the html files to the webserver directory.  </description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://danskaf.dev/about/</link>
+      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://danskaf.dev/about/</guid>
+      <description>I am a Linux, Networking, Cyber Security and Programming enthusiast, recently graduated from the Otago University in Computer Science and Electronics.
+Contact me and find links to my projects here.
+ dan@danskaf.dev https://github.com/skafdan  </description>
+    </item>
+    
+  </channel>
+</rss>

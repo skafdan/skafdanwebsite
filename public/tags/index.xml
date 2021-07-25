@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Dan Skaf</title>
+    <link>http://danskaf.dev/tags/</link>
+    <description>Recent content in Tags on Dan Skaf</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 17 Jul 2021 14:23:04 +1200</lastBuildDate><atom:link href="http://danskaf.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>http://danskaf.dev/tags/linux/</link>
+      <pubDate>Sat, 17 Jul 2021 14:23:04 +1200</pubDate>
+      
+      <guid>http://danskaf.dev/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>systemd</title>
+      <link>http://danskaf.dev/tags/systemd/</link>
+      <pubDate>Sat, 17 Jul 2021 14:23:04 +1200</pubDate>
+      
+      <guid>http://danskaf.dev/tags/systemd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>http://danskaf.dev/tags/raspberry-pi/</link>
+      <pubDate>Thu, 24 Jun 2021 16:10:26 +1200</pubDate>
+      
+      <guid>http://danskaf.dev/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
