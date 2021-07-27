@@ -16,18 +16,73 @@
             
             <guid>http://danskaf.dev/posts/2021/07/home-vpn/</guid>
             <description>As the amount of services I have running on my home-network increases it&amp;rsquo;s become more and more sensible to have a secure way of accessing them while out of the house.
-Work in progress
- References and links  Padlock vector image used under creative commons license 4.0 Nyr Wireguard install script  </description>
+Wireguard is a free and open-source program that implements encrypted virtual private networks that has support for Windows, MacOS, Linux and Android. I chose wireguard because it supported by NetworkManger and all devices I use run NetworkManger.
+This blog post refers to a Linux peer but the steps for connecting to a client are pretty much ubiquitous for all clients.</description>
             <content type="html"><![CDATA[<p><img src="padlock.png" alt="padlock"></p>
 <p>As the amount of services I have running on my home-network increases it&rsquo;s become
 more and more sensible to have a secure way of accessing them while out of the
 house.</p>
-<p><em>Work in progress</em></p>
+<p>Wireguard is a free and open-source program that implements encrypted virtual
+private networks that has support for Windows, MacOS, Linux and Android.
+I chose wireguard because it supported by NetworkManger and all devices I use
+run NetworkManger.</p>
+<p>This blog post refers to a Linux peer but the steps for connecting to a client
+are pretty much ubiquitous for all clients.</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>Wireguard client package</li>
+<li>Static IP or Dynamic DNS</li>
+<li>Linux based OS to install Wireguard server</li>
+<li>Git</li>
+</ul>
+<p>When we create the configuration files for our VPN we need to point to the
+clients to an address that will always be up. If your ISP does not provide you
+the option to obtain a static IP address the alternative is to set up a Dynamic
+Domain Name so even if your IP changes users can still be directed to the
+correct location.</p>
+<h3 id="installing-the-wireguard-server">Installing the Wireguard server</h3>
+<p>The wireguard server can be installed manually however it is much simpler to
+use a script to automate the process, as it automatically handles the creation
+of the encryption keys and certificates, otherwise we would have to generate
+these ourself.</p>
+<p><a href="https://github.com/Nyr/wireguard-install">Nyr&rsquo;s</a> wireguard script on github is
+what I used to install wireguard and it features highly configurable options for installing and managing wireguard post-installation.</p>
+<p>Create a directory for the wireguard installation, <code>cd</code> and paste the following
+command:</p>
+<pre><code>$ wget https://git.io/wireguard -O wireguard-install.sh &amp;&amp; bash wireguard-install.sh
+</code></pre><p>To run the script we need to run it as root:</p>
+<pre><code>$ sudo bash wireguard-install.sh
+</code></pre><p>When it asks, &ldquo;<code>What is the public IPv4 address or hostname?</code>&rdquo;, enter your
+static IP or Domain name here.</p>
+<p>Leave the port as default</p>
+<p>Pick whatever name you want for your first client and DNS server for the client.
+I set my client name to <code>Dan</code> and chose my DNS server as <code>Google</code></p>
+<p>Once it has setup it will produce a config file in <code>/root/&lt;clientName&gt;.conf</code>
+or if you are using an Android device you can simply scan the QR code and you
+are done.</p>
+<h3 id="connecting-a-linux-client">Connecting a Linux Client</h3>
+<p>Ensure all packages are up to date and install wireguard-tools package.</p>
+<pre><code>$ sudo pacman -Syyu wireguard-tools
+</code></pre><p>Copy the configuration file created earlier to a safe place on your client
+machine.</p>
+<p>Some desktop environments may have options in the settings for adding a VPN
+connection however I found the experience to be a bit hit and miss so using the
+NetworkManger command line interface -<code>nmcli</code> is the simplest solution.</p>
+<pre><code>$ nmcli connection import type wireguard file /path/to/&lt;clientName&gt;.conf
+</code></pre><p>The default configuration files are in <code>/etc/wireguard/wg0.conf</code>. I am happy
+with the default settings however we easily change things like the address subnet
+interface and port here also every subsequent peer we create is added to this
+file.</p>
+<p>The config files for the peers also have options like specifying allowed ip
+addresses, all these options are we documented in the Arch-wiki and the
+Wireguard documentation.</p>
 <hr>
 <h3 id="references-and-links">References and links</h3>
 <ul>
 <li><a href="https://commons.wikimedia.org/wiki/File:Antu_object-unlocked.svg">Padlock vector image used under creative commons license 4.0</a></li>
 <li><a href="https://github.com/Nyr/wireguard-install">Nyr Wireguard install script</a></li>
+<li><a href="https://wiki.archlinux.org/title/WireGuard">Arch-wiki</a></li>
+<li><a href="https://www.wireguard.com/quickstart/">Wireguard</a></li>
 </ul>
 ]]></content>
         </item>

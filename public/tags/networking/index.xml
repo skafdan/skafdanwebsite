@@ -15,8 +15,8 @@
       
       <guid>http://danskaf.dev/posts/2021/07/home-vpn/</guid>
       <description>As the amount of services I have running on my home-network increases it&amp;rsquo;s become more and more sensible to have a secure way of accessing them while out of the house.
-Work in progress
- References and links  Padlock vector image used under creative commons license 4.0 Nyr Wireguard install script  </description>
+Wireguard is a free and open-source program that implements encrypted virtual private networks that has support for Windows, MacOS, Linux and Android. I chose wireguard because it supported by NetworkManger and all devices I use run NetworkManger.
+This blog post refers to a Linux peer but the steps for connecting to a client are pretty much ubiquitous for all clients.</description>
     </item>
     
   </channel>
