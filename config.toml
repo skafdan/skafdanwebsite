@@ -89,7 +89,7 @@ PygmentsStyle = "monokai"
 
   [params.logo]
     logoMark     = ">"
-    logoText     = "[dan@home ~$]"
+    logoText     = "[dan@home ~]$"
     logoHomeLink = "/"
     # Set true to remove the logo cursor entirely.
     # logoCursorDisabled = false
